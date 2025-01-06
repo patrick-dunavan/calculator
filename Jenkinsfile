@@ -30,7 +30,7 @@ pipeline {
             def userInput = false
                 script {
                     timeout(time: 30, unit: 'SECONDS') {
-                        def userInput = input(id: 'Proceed1', message: 'Promote build?', parameters: [[$class: 'BooleanParameterDefinition', defaultValue: true, description: '', name: 'Please confirm you agree with this']])
+                        userInput = input(id: 'Proceed1', message: 'Promote build?', parameters: [[$class: 'BooleanParameterDefinition', defaultValue: true, description: '', name: 'Please confirm you agree with this']])
                         echo 'userInput: ' + userInput
                     }
 
