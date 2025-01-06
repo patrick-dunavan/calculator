@@ -47,6 +47,7 @@ pipeline {
 
           stage("Code coverage") { 
                steps { 
+                    sh "chmod 775 gradlew"
                     sh "./gradlew jacocoTestReport"
                     publishHTML ( target: [
                         reportDir: 'build/reports/jacoco/test/html',
